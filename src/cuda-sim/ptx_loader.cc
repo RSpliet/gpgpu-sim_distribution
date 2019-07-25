@@ -375,7 +375,7 @@ void gpgpu_ptxinfo_load_from_string( const char *p_for_info, unsigned source_num
         fd=mkstemp(fname2); 
         close(fd);
         char commandline2[4096];
-        snprintf(commandline2,4096,"cat %s | sed 's/.version 1.5/.version 1.4/' | sed 's/, texmode_independent//' | sed 's/\\(\\.extern \\.const\\[1\\] .b8 \\w\\+\\)\\[\\]/\\1\\[1\\]/' | sed 's/const\\[.\\]/const\\[0\\]/g' > %s", fname, fname2);
+        snprintf(commandline2,4096,"cat %s | sed 's/.version 5.0/.version 4.3/' | sed 's/, texmode_independent//' | sed 's/\\(\\.extern \\.const\\[1\\] .b8 \\w\\+\\)\\[\\]/\\1\\[1\\]/' | sed 's/const\\[.\\]/const\\[0\\]/g' > %s", fname, fname2);
         printf("Running: %s\n", commandline2);
         int result = system(commandline2);
         if( result != 0 ) {
@@ -444,7 +444,7 @@ void gpgpu_ptxinfo_load_from_string( const char *p_for_info, unsigned source_num
 	fd=mkstemp(fname2);
 	close(fd);
 	char commandline2[4096];
-	snprintf(commandline2,4096,"cat %s | sed 's/.version 1.5/.version 1.4/' | sed 's/, texmode_independent//' | sed 's/\\(\\.extern \\.const\\[1\\] .b8 \\w\\+\\)\\[\\]/\\1\\[1\\]/' | sed 's/const\\[.\\]/const\\[0\\]/g' > %s", fname, fname2);
+	snprintf(commandline2,4096,"cat %s | sed 's/.version 5.0/.version 4.3/' | sed 's/, texmode_independent//' | sed 's/\\(\\.extern \\.const\\[1\\] .b8 \\w\\+\\)\\[\\]/\\1\\[1\\]/' | sed 's/const\\[.\\]/const\\[0\\]/g' > %s", fname, fname2);
 	printf("Running: %s\n", commandline2);
 	int result = system(commandline2);
 	if( result != 0 ) {
